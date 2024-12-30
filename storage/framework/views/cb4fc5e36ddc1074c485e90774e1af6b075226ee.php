@@ -1,0 +1,1 @@
+<?php echo $page['content']; ?><?php /**PATH /var/www/resources/views/page.blade.php ENDPATH**/ ?>
