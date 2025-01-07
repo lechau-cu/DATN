@@ -12,11 +12,6 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Doanh thu</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     {{number_format($totalRevenue)}} đ
-                                    @if($revenueChangePercentage > 0)
-                                        <span class="text-success text-sm font-weight-bolder">+{{$revenueChangePercentage}}%</span>
-                                    @else
-                                        <span class="text-danger text-sm font-weight-bolder">-{{$revenueChangePercentage}}%</span>
-                                    @endif
                                 </h5>
                             </div>
                         </div>
@@ -38,11 +33,7 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Khách hàng mới</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     {{ $totalCustomers }}
-                                    @if($customerChangePercentage > 0)
-                                        <span class="text-success text-sm font-weight-bolder">+{{$customerChangePercentage}}%</span>
-                                    @else
-                                        <span class="text-danger text-sm font-weight-bolder">-{{$customerChangePercentage}}%</span>
-                                    @endif                                </h5>
+                                </h5>
                             </div>
                         </div>
                         <div class="col-4 text-end">
