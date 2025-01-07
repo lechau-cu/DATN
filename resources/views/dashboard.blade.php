@@ -63,11 +63,7 @@
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Tổng số nhân viên</p>
                                 <h5 class="font-weight-bolder mb-0">
                                     {{$totalEmployees}}
-                                    @if($employeeChangePercentage > 0)
-                                        <span class="text-success text-sm font-weight-bolder">+{{$employeeChangePercentage}}%</span>
-                                    @else
-                                        <span class="text-danger text-sm font-weight-bolder">-{{$employeeChangePercentage}}%</span>
-                                    @endif                                </h5>
+                                </h5>
                             </div>
                         </div>
                         <div class="col-4 text-end">

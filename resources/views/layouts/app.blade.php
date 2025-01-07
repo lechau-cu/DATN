@@ -10,9 +10,9 @@
             <meta charset="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-            @if (env('IS_DEMO'))
-                <x-demo-metas></x-demo-metas>
-            @endif
+{{--            @if (env('IS_DEMO'))--}}
+{{--                <x-demo-metas></x-demo-metas>--}}
+{{--            @endif--}}
 
             <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
             <link rel="icon" type="image/png"

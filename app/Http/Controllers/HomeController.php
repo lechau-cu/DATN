@@ -31,14 +31,14 @@ class HomeController extends Controller
 
         $currentMonthRevenueQuery = Transaction::whereYear('created_at', $currentYear)
             ->whereMonth('created_at', $currentMonth);
-        if ($agencyId !== null) {
+        if (!empty($agencyId)) {
             $currentMonthRevenueQuery->where('agency_id', $agencyId);
         }
         $currentMonthRevenue = $currentMonthRevenueQuery->sum('amount');
 
         $previousMonthRevenueQuery = Transaction::whereYear('created_at', $previousYear)
             ->whereMonth('created_at', $previousMonth);
-        if ($agencyId !== null) {
+        if (!empty($agencyId)) {
             $previousMonthRevenueQuery->where('agency_id', $agencyId);
         }
         $previousMonthRevenue = $previousMonthRevenueQuery->sum('amount');
@@ -49,14 +49,14 @@ class HomeController extends Controller
 
         $currentMonthCustomersQuery = Customer::whereYear('created_at', $currentYear)
             ->whereMonth('created_at', $currentMonth);
-        if ($agencyId !== null) {
+        if (!empty($agencyId)) {
             $currentMonthCustomersQuery->where('agency_id', $agencyId);
         }
         $currentMonthCustomers = $currentMonthCustomersQuery->count();
 
         $previousMonthCustomersQuery = Customer::whereYear('created_at', $previousYear)
             ->whereMonth('created_at', $previousMonth);
-        if ($agencyId !== null) {
+        if (!empty($agencyId)) {
             $previousMonthCustomersQuery->where('agency_id', $agencyId);
         }
         $previousMonthCustomers = $previousMonthCustomersQuery->count();
@@ -65,16 +65,15 @@ class HomeController extends Controller
             ? (($currentMonthCustomers - $previousMonthCustomers) / $previousMonthCustomers) * 100
             : ($currentMonthCustomers > 0 ? 100 : 0);
 
-        $currentMonthEmployeesQuery = User::whereYear('created_at', $currentYear)
-            ->whereMonth('created_at', $currentMonth);
-        if ($agencyId !== null) {
+        $currentMonthEmployeesQuery = User::query();
+        if (!empty($agencyId)) {
             $currentMonthEmployeesQuery->where('agency_id', $agencyId);
         }
         $currentMonthEmployees = $currentMonthEmployeesQuery->count();
 
         $previousMonthEmployeesQuery = User::whereYear('created_at', $previousYear)
             ->whereMonth('created_at', $previousMonth);
-        if ($agencyId !== null) {
+        if (!empty($agencyId)) {
             $previousMonthEmployeesQuery->where('agency_id', $agencyId);
         }
         $previousMonthEmployees = $previousMonthEmployeesQuery->count();
@@ -83,7 +82,7 @@ class HomeController extends Controller
             ? (($currentMonthEmployees - $previousMonthEmployees) / $previousMonthEmployees) * 100
             : ($currentMonthEmployees > 0 ? 100 : 0);
         $next7Days = CustomerSchedule::whereBetween('start_time', [Carbon::now(), Carbon::now()->addDays(7)]);
-        if ($agencyId !== null) {
+        if (!empty($agencyId)) {
             $next7Days->where('agency_id', $agencyId);
         }
         $schedules = $next7Days->with('customer', 'user')->get();
