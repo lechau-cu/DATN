@@ -44,13 +44,13 @@
                         @endif
                         <div class="col-md-6 mb-3">
                             <label for="start_time" class="form-label">Thời gian bắt đầu</label>
-                            <input type="datetime-local" name="start_time" id="start_time"
+                            <input type="date" name="start_time" id="start_time"
                                    class="form-control"
                                    value="{{ old('start_time') }}">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="end_time" class="form-label">Thời gian kết thúc</label>
-                            <input type="datetime-local" name="end_time" id="end_time"
+                            <input type="date" name="end_time" id="end_time"
                                    class="form-control"
                                    value="{{ old('end_time') }}">
                         </div>
@@ -60,7 +60,12 @@
                                       class="form-control"
                                       placeholder="Ghi chú">{{ old('note') }}</textarea>
                         </div>
-
+                        <div class="col-md-6 mb-3">
+                            <label for="practice_time" class="form-label">Ca tập</label>
+                            <input type="time" name="practice_time" id="practice_time"
+                                   class="form-control"
+                                   value="{{ old('practice_time') }}">
+                        </div>
                     </div>
 
                     <div class="d-flex justify-content-end">

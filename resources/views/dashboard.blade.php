@@ -154,7 +154,7 @@
                 <div class="card-header pb-0">
                     <div class="row" style="margin-bottom: 10px">
                         <div class="col-lg-6 col-7">
-                            <h6>Lịch tập trong tuần</h6>
+                            <h6>Lịch tập sắp tới</h6>
                             <p class="text-sm mb-0">
                                 <i class="fa fa-check text-info" aria-hidden="true"></i>
                                 <span class="font-weight-bold ms-1">Tổng: {{count($schedules)}} buổi</span>

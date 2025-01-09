@@ -49,7 +49,7 @@
                                             Thời gian kết thúc
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Ghi chú
+                                            Ca tập
                                         </th>
                                         <th class="text-secondary opacity-7"></th>
                                     </tr>
@@ -74,15 +74,15 @@
                                                     <p class="text-sm font-weight-bol mb-0">{{$item->user->name ?? ''}}</p>
                                                 </td>
                                                 <td class="align-middle text-left">
-                                                    <span class="text-sm">{{ $item->start_time ? \Carbon\Carbon::parse($item->start_time)->format('H:i d/m/Y') : '-' }}</span>
+                                                    <span class="text-sm">{{ $item->start_time ? \Carbon\Carbon::parse($item->start_time)->format('d/m/Y') : '-' }}</span>
                                                 </td>
                                                 <td class="align-middle text-left">
                                                     <span class="text-sm">
-                                                        {{ $item->end_time ? \Carbon\Carbon::parse($item->end_time)->format('H:i d/m/Y') : '-' }}
+                                                        {{ $item->end_time ? \Carbon\Carbon::parse($item->end_time)->format('d/m/Y') : '-' }}
                                                     </span>
                                                 </td>
-                                                <td>
-                                                    <p class="text-sm font-weight-bol mb-0">{{$item->note}}</p>
+                                                <td class="align-middle text-center">
+                                                    <p class="text-sm font-weight-bol mb-0">{{$item->practice_time}}</p>
                                                 </td>
                                                 <td class="align-middle">
                                                     <form action="{{ route('customer_schedules.destroy', ['id' => $item->id]) }}"

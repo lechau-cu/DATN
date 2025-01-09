@@ -57,7 +57,8 @@ class CustomerSchedulesController extends Controller
             'user_id' => $request->user_id,
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
-            'agency_id' => $agencyId
+            'agency_id' => $agencyId,
+            'practice_time' => $request->practice_time
         ]);
 
         return redirect()->route('customer_schedules.index');

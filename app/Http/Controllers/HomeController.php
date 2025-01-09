@@ -81,7 +81,7 @@ class HomeController extends Controller
         $employeeChangePercentage = $previousMonthEmployees > 0
             ? (($currentMonthEmployees - $previousMonthEmployees) / $previousMonthEmployees) * 100
             : ($currentMonthEmployees > 0 ? 100 : 0);
-        $next7Days = CustomerSchedule::whereBetween('start_time', [Carbon::now(), Carbon::now()->addDays(7)]);
+        $next7Days = CustomerSchedule::where('start_time', '>', Carbon::now());
         if (!empty($agencyId)) {
             $next7Days->where('agency_id', $agencyId);
         }

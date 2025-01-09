@@ -16,7 +16,8 @@ class CustomerSchedule extends Model
         'end_time',
         'note',
         'user_id',
-        'agency_id'
+        'agency_id',
+        'practice_time'
     ];
 
     public function customer()
